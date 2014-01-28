@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>sadobass form check</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://10.1.1.23:7005/js/jquery.timer.js" ></script>
+		<script type="text/javascript" src="./form_check.js" ></script>
+		<style>
+		</style>
+		<script type="text/javascript">
+		<!--
+		function check2(f){
+			if(checkValidForm(f)) 
+			{
+				alert('성공 후 처리');
+			}
+		}
+		//-->
+		</script>
+	</head>
+	<body>
+		<form action="" method="post" name="frm1">
+			<div>숫자 : <input type="text" name="numtest" title="숫자" class="required numeric" onkeyup="checkComma(this);" /> </div>
+			<div>숫자 복사된 경우(이름 같을 경우): <input type="text" name="numtest" title="숫자복사" class="required numeric" onkeyup="checkComma(this);" /> </div>
+			<div>이름 : <input type="text" name="uname" title="이름" class="required" onkeyup="checkComma(this);" /> </div>
+			<div>이름 : <input type="text" name="uname" title="이름" class="required" onkeyup="checkComma(this);" /> </div>
+			<div>비밀번호 : <input type="password" name="pwd" title="비밀번호" class="required" /> </div>
+			<div>이메일 : <input type="text" name="email" title="이메일" class="re quired emailType" /> </div>
+			<div>성별 : 남자<input type="radio" name="gender" title="성별" class="required" value="M" /> 
+					     여자<input type="radio" name="gender" title="성별" class="required" value="F" /> </div>
+			<div>과목 : ASP<input type="checkbox" name="part" title="과목" class="required" value="ASP" mincheck="3" maxcheck="3"> 
+					   ASP.NET<input type="checkbox" name="part" title="과목" class="required" value="ASP.NET" mincheck="3" maxcheck="3"> 
+					   PHP<input type="checkbox" name="part" title="과목" class="required" value="PHP" mincheck="3" maxcheck="3"> 
+					   JSP<input type="checkbox" name="part" title="과목" class="required" value="JSP" mincheck="3" maxcheck="3">
+			</div>
+			<div>부서 : 
+				<select id="job" name="job" title="직업" class="required">
+					<option value="">==선택==</option>
+					<option value="1">프로그램</option>
+					<option value="2">디자인</option>
+					<option value="3">기획</option>
+				</select>
+			</div>
+			<div>연락처 : <input type="text" name="tel1" size="3" title="연락처1" class="numeric" maxlength="3" />-<input type="text" name="tel2" size="4" title="연락처2" maxlength="4" />-<input type="text" name="tel3" size="4" title="연락처3" maxlength="4" /> </div>
+			<div>금액 : <input type="text" name="num1" title="금액" class="required numeric numStr" maxlength="20" onkeyup="checkOnlyNum($(this));checkNumFormat(this.name);" /> <span class="numStr" id="num1Str"></span></div>
+			<div>제목 : <input type="text" name="subject" size="70" title="제목" class="required" /> </div>
+			<div> 
+				<textarea name="TempContents" id="TempContents" rows="7" cols="30" style="display:no ne;" class="required" title="내용">Hello~</textarea>
+			</div>
+			<div><input type="file" name="file" class="file required" title="첨부파일" size="60" /></div>
+			<p><input type="button" value="로딩시 바인딩 Check" class="checkBtn test" /></p>
+		</form>
+		<div>
+			<form action="" method="post" name="frm2">
+				<input type="text" value="난 아니여" class="required" />
+				<p><input type="button" value="Check" class="checkBtn" /></p>
+				<input type="file" class="multi" accept="gif|jpg" maxlength="3"/>
+			</form>
+		</div>
+		<input type="button" value="클릭시 Check" onclick="check2('frm1');" class="hand" />
+	</body>
+</html>
